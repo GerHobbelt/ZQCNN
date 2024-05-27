@@ -104,10 +104,10 @@ void inner_kernel_MxALIGN2_template(int K, const float *packA, const float *pack
 	const float *aptr = packA;
 	const float *bptr = packB;
 	float *cptr = c;
-	register zq_mm_type va;
-	register zq_mm_type vb0, vb1;
-	register zq_mm_type vc00, vc10, vc20, vc30, vc40, vc50, vc60, vc70;
-	register zq_mm_type vc01, vc11, vc21, vc31, vc41, vc51, vc61, vc71;
+	zq_mm_type va;
+	zq_mm_type vb0, vb1;
+	zq_mm_type vc00, vc10, vc20, vc30, vc40, vc50, vc60, vc70;
+	zq_mm_type vc01, vc11, vc21, vc31, vc41, vc51, vc61, vc71;
 
 	vc00 = zq_mm_load_ps(cptr);
 	vc01 = zq_mm_load_ps(cptr + zq_mm_align_size);
@@ -292,11 +292,11 @@ void inner_kernel_MxALIGN3_template(int K, const float *packA, const float *pack
 	const float *aptr = packA;
 	const float *bptr = packB;
 	float *cptr = c;
-	register zq_mm_type va;
-	register zq_mm_type vb0, vb1, vb2;
-	register zq_mm_type vc00, vc10, vc20, vc30, vc40, vc50, vc60, vc70;
-	register zq_mm_type vc01, vc11, vc21, vc31, vc41, vc51, vc61, vc71;
-	register zq_mm_type vc02, vc12, vc22, vc32, vc42, vc52, vc62, vc72;
+	zq_mm_type va;
+	zq_mm_type vb0, vb1, vb2;
+	zq_mm_type vc00, vc10, vc20, vc30, vc40, vc50, vc60, vc70;
+	zq_mm_type vc01, vc11, vc21, vc31, vc41, vc51, vc61, vc71;
+	zq_mm_type vc02, vc12, vc22, vc32, vc42, vc52, vc62, vc72;
 
 	vc00 = zq_mm_load_ps(cptr);
 	vc01 = zq_mm_load_ps(cptr + zq_mm_align_size);
@@ -515,12 +515,12 @@ void inner_kernel_MxALIGN4_template(int K, const float *packA, const float *pack
 	const float *aptr = packA;
 	const float *bptr = packB;
 	float *cptr = c;
-	register zq_mm_type va;
-	register zq_mm_type vb0, vb1, vb2, vb3;
-	register zq_mm_type vc00, vc10, vc20, vc30, vc40, vc50, vc60, vc70;
-	register zq_mm_type vc01, vc11, vc21, vc31, vc41, vc51, vc61, vc71;
-	register zq_mm_type vc02, vc12, vc22, vc32, vc42, vc52, vc62, vc72;
-	register zq_mm_type vc03, vc13, vc23, vc33, vc43, vc53, vc63, vc73;
+	zq_mm_type va;
+	zq_mm_type vb0, vb1, vb2, vb3;
+	zq_mm_type vc00, vc10, vc20, vc30, vc40, vc50, vc60, vc70;
+	zq_mm_type vc01, vc11, vc21, vc31, vc41, vc51, vc61, vc71;
+	zq_mm_type vc02, vc12, vc22, vc32, vc42, vc52, vc62, vc72;
+	zq_mm_type vc03, vc13, vc23, vc33, vc43, vc53, vc63, vc73;
 
 	vc00 = zq_mm_load_ps(cptr);
 	vc01 = zq_mm_load_ps(cptr + zq_mm_align_size);
@@ -774,16 +774,16 @@ void inner_kernel_MxALIGN8_template(int K, const float *packA, const float *pack
 	const float *aptr = packA;
 	const float *bptr = packB;
 	float *cptr = c;
-	register zq_mm_type va;
-	register zq_mm_type vb0, vb1, vb2, vb3, vb4, vb5, vb6, vb7;
-	register zq_mm_type vc00, vc10, vc20, vc30, vc40, vc50, vc60, vc70;
-	register zq_mm_type vc01, vc11, vc21, vc31, vc41, vc51, vc61, vc71;
-	register zq_mm_type vc02, vc12, vc22, vc32, vc42, vc52, vc62, vc72;
-	register zq_mm_type vc03, vc13, vc23, vc33, vc43, vc53, vc63, vc73;
-	register zq_mm_type vc04, vc14, vc24, vc34, vc44, vc54, vc64, vc74;
-	register zq_mm_type vc05, vc15, vc25, vc35, vc45, vc55, vc65, vc75;
-	register zq_mm_type vc06, vc16, vc26, vc36, vc46, vc56, vc66, vc76;
-	register zq_mm_type vc07, vc17, vc27, vc37, vc47, vc57, vc67, vc77;
+	zq_mm_type va;
+	zq_mm_type vb0, vb1, vb2, vb3, vb4, vb5, vb6, vb7;
+	zq_mm_type vc00, vc10, vc20, vc30, vc40, vc50, vc60, vc70;
+	zq_mm_type vc01, vc11, vc21, vc31, vc41, vc51, vc61, vc71;
+	zq_mm_type vc02, vc12, vc22, vc32, vc42, vc52, vc62, vc72;
+	zq_mm_type vc03, vc13, vc23, vc33, vc43, vc53, vc63, vc73;
+	zq_mm_type vc04, vc14, vc24, vc34, vc44, vc54, vc64, vc74;
+	zq_mm_type vc05, vc15, vc25, vc35, vc45, vc55, vc65, vc75;
+	zq_mm_type vc06, vc16, vc26, vc36, vc46, vc56, vc66, vc76;
+	zq_mm_type vc07, vc17, vc27, vc37, vc47, vc57, vc67, vc77;
 
 	vc00 = zq_mm_load_ps(cptr);
 	vc01 = zq_mm_load_ps(cptr + zq_mm_align_size);
