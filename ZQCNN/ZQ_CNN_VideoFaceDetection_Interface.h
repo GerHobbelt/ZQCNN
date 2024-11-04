@@ -695,7 +695,7 @@ namespace ZQ
 				};
 				float transform[6];
 				
-				ZQ_CNN_FaceCropUtils::CropImage_112x112_translate_scale_roll(input, face5pts, task_hpg_images[pp], transform, -1);
+				ZQ_CNN_FaceCropUtils::CropImage_112x112_translate_scale_roll(input, face5pts, task_hpg_images[0], transform, -1);
 
 				float sc = transform[0];
 				float ss = transform[1];
@@ -706,9 +706,9 @@ namespace ZQ
 				resultBbox[pp].center_and_rot[1] = ty;
 				resultBbox[pp].center_and_rot[2] = rot;
 
-				task_hpg_images[pp].ConvertColor_BGR2GRAY(task_hpg_images_gray[pp],1,1);
-				task_hpg_images_gray[pp].MulScalar(128.0f);
-				task_hpg_images_gray[pp].AddScalar(127.5f);
+				task_hpg_images[0].ConvertColor_BGR2GRAY(task_hpg_images_gray[0],1,1);
+				task_hpg_images_gray[0].MulScalar(128.0f);
+				task_hpg_images_gray[0].AddScalar(127.5f);
 				
 				headposegaze_nets[0].Forward(task_hpg_images_gray[0]);
 				const ZQ_CNN_Tensor4D_Interface_Base* hpg = headposegaze_nets[0].GetBlobByName("headposegaze_fc3/BiasAdd");
